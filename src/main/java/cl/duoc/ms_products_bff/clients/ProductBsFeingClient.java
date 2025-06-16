@@ -13,21 +13,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import cl.duoc.ms_products_bff.model.dto.ProductDTO;
 
-@FeignClient(name = "ms-products-bs", url = "http://localhost:8281/api/products")
+@FeignClient(name = "ms-products-bs", url = "http://localhost:8281")
 public interface ProductBsFeingClient {
-    @GetMapping()
+    @GetMapping("/api/products")
     public ResponseEntity<List<ProductDTO>> selectAllProduct();
 
-    @GetMapping("/{idProduct}")
+    @GetMapping("/api/products/GetProductById/{idProduct}")
     public ResponseEntity<?> getProductById(@PathVariable(name = "idProduct") Long idProduct);
 
-    @PostMapping()
+    @PostMapping("/api/products/insertProduct")
     public ResponseEntity<String> insertProduct(@RequestBody ProductDTO productDTO);
     
-    @DeleteMapping("/DeleteProductById/{idProduct}")
+    @DeleteMapping("/api/products/DeleteProductById/{idProduct}")
     public ResponseEntity<String> deleteProduct(@PathVariable(name = "idProduct") Long idProduct);
 
-    @PutMapping("/UpdateProduct")
+    @PutMapping("/api/products/UpdateProduct")
     public ResponseEntity<String> updateProduct(@RequestBody ProductDTO productDTO);
 
 }

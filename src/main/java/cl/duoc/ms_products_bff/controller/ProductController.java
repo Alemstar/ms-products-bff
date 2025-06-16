@@ -34,7 +34,7 @@ public class ProductController {
         return productService.getProductById(idProduct);
     }
     
-    @PostMapping()
+    @PostMapping("/insertProduct")
     public ResponseEntity<String> insertProduct(@RequestBody ProductDTO productDTO){
         try{
         return productService.insertProduct(productDTO);}
