@@ -30,7 +30,7 @@ public class ProductController {
     }
 
     @GetMapping("/GetProductById/{idProduct}")
-    public ResponseEntity<?> getProductById(@PathVariable("idProduct") Long idProduct){
+    public ResponseEntity<?> getProductById(@PathVariable("idProduct") String idProduct){
         return productService.getProductById(idProduct);
     }
     
@@ -44,7 +44,7 @@ public class ProductController {
     }
 
     @DeleteMapping("/DeleteProductById/{idProduct}")
-    public ResponseEntity<String> deleteProduct(@PathVariable("idProduct") Long idProduct){
+    public ResponseEntity<String> deleteProduct(@PathVariable("idProduct") String idProduct){
         try{
         return productService.deleteProduct(idProduct);}
         catch(FeignClientException feignClientException){

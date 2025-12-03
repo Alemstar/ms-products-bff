@@ -14,14 +14,38 @@ import lombok.ToString;
 @ToString
 public class ProductDTO {
      @JsonProperty(value = "product_id")
-        private Long idProduct;
+        private String idProduct;
 
-    @JsonProperty(value = "product_name")
+    @JsonProperty(value = "nombre")
         private String productName;
 
-    @JsonProperty(value = "price")
+    @JsonProperty(value = "descripcion")
+        private String descripcion;
+
+    @JsonProperty(value = "precio")
         private int price;
 
     @JsonProperty(value = "stock")
         private int stock;
+
+    @JsonProperty(value = "categoria_id")
+        private String categoriaId;
+
+    @JsonProperty(value = "imagen")
+        private String imagen;
+
+    @JsonProperty(value = "personalizable")
+        private boolean personalizable;
+
+    @JsonProperty(value = "max_msg_chars")
+        private int maxMsgChars;
+
+    @JsonProperty(value = "tipo_forma")
+        private String tipoForma;
+
+    @JsonProperty(value = "tamanos_disponibles")
+        private String tamanosDisponibles;
+
+    @JsonProperty(value = "code")
+        private String code;
 }

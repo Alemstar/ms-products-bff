@@ -19,13 +19,13 @@ public interface ProductBsFeingClient {
     public ResponseEntity<List<ProductDTO>> selectAllProduct();
 
     @GetMapping("/api/products/GetProductById/{idProduct}")
-    public ResponseEntity<?> getProductById(@PathVariable(name = "idProduct") Long idProduct);
+    public ResponseEntity<?> getProductById(@PathVariable(name = "idProduct") String idProduct);
 
     @PostMapping("/api/products/insertProduct")
     public ResponseEntity<String> insertProduct(@RequestBody ProductDTO productDTO);
     
     @DeleteMapping("/api/products/DeleteProductById/{idProduct}")
-    public ResponseEntity<String> deleteProduct(@PathVariable(name = "idProduct") Long idProduct);
+    public ResponseEntity<String> deleteProduct(@PathVariable(name = "idProduct") String idProduct);
 
     @PutMapping("/api/products/UpdateProduct")
     public ResponseEntity<String> updateProduct(@RequestBody ProductDTO productDTO);
