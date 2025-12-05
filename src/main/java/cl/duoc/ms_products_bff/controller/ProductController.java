@@ -31,9 +31,9 @@ public class ProductController {
         return listProductDTO;
     }
 
-    @GetMapping("/GetProductById/{idProduct}")
-    public ResponseEntity<?> getProductById(@PathVariable("idProduct") String idProduct){
-        return productService.getProductById(idProduct);
+    @GetMapping("/GetProductByCode/{code}")
+    public ResponseEntity<?> getProductByCode(@PathVariable("code") String code){
+        return productService.getProductByCode(code);
     }
     
     @PostMapping("/insertProduct")
@@ -45,10 +45,10 @@ public class ProductController {
         }
     }
 
-    @DeleteMapping("/DeleteProductById/{idProduct}")
-    public ResponseEntity<String> deleteProduct(@PathVariable("idProduct") String idProduct){
+    @DeleteMapping("/DeleteProductByCode/{code}")
+    public ResponseEntity<String> deleteProduct(@PathVariable("code") String code){
         try{
-        return productService.deleteProduct(idProduct);}
+        return productService.deleteProduct(code);}
         catch(FeignClientException feignClientException){
             return ResponseEntity.status(feignClientException.status()).body(feignClientException.contentUTF8());
         }

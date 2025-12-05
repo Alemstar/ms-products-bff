@@ -16,9 +16,9 @@ public class ProductService {
 @Autowired
     ProductBsFeingClient productBsFeingClient;
 
-    public ResponseEntity<?> getProductById(String idProduct){
+    public ResponseEntity<?> getProductByCode(String code){
         try {
-            return productBsFeingClient.getProductById(idProduct);
+            return productBsFeingClient.getProductByCode(code);
         } catch (FeignException feignException){
             return ResponseEntity.status(feignException.status()).body(feignException.contentUTF8());
             }   
@@ -35,8 +35,8 @@ public class ProductService {
         return productBsFeingClient.insertProduct(productDTO);
     }
 
-    public ResponseEntity<String> deleteProduct(String idProduct){
-        return productBsFeingClient.deleteProduct(idProduct);
+    public ResponseEntity<String> deleteProduct(String code){
+        return productBsFeingClient.deleteProduct(code);
     }
 
     public ResponseEntity<String> updateProduct(ProductDTO productDTO){
