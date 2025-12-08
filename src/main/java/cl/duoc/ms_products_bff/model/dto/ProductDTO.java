@@ -25,11 +25,11 @@ public class ProductDTO {
     @JsonProperty(value = "descripcion")
     private String descripcion;
 
-    @JsonProperty(value = "precio")
-    private int price;
+    @JsonProperty(value = "price")
+    private Integer price;
 
     @JsonProperty(value = "stock")
-    private int stock;
+    private Integer stock;
 
     @JsonProperty(value = "categoria")
     private String categoria;
@@ -38,10 +38,10 @@ public class ProductDTO {
     private String imagen;
 
     @JsonProperty(value = "personalizable")
-    private boolean personalizable;
+    private Boolean personalizable;
 
     @JsonProperty(value = "maxMsgChars")
-    private int maxMsgChars;
+    private Integer maxMsgChars;
 
     @JsonProperty(value = "tipoForma")
     private String tipoForma;
